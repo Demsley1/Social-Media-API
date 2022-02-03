@@ -6,7 +6,7 @@ const thoughtController = {
         Thought.find({})
         .populate({
             path: 'reactions',
-            select: '_id'
+            select: 'reactionId'
         })
         .select("-__v")
         .then(dbThoughtData => res.json(dbThoughtData))
